@@ -7,12 +7,8 @@ var VideoListEntryView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template());
-    Array.prototype.slice.call(window.exampleVideoData).forEach(video => {
-      this.$el.append(this.template());
-      console.log(video.snippet);
-    });
-    //console.log(this)
+    this.$el.append(this.template(this.model));
+    
     return this;
   },
 
